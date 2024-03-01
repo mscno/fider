@@ -23,6 +23,7 @@ import (
 	_ "github.com/getfider/fider/app/services/blob/sql"
 	_ "github.com/getfider/fider/app/services/email/awsses"
 	_ "github.com/getfider/fider/app/services/email/mailgun"
+	_ "github.com/getfider/fider/app/services/email/resend"
 	_ "github.com/getfider/fider/app/services/email/smtp"
 	_ "github.com/getfider/fider/app/services/httpclient"
 	_ "github.com/getfider/fider/app/services/log/console"
@@ -33,8 +34,8 @@ import (
 	_ "github.com/getfider/fider/app/services/webhook"
 )
 
-//RunServer starts the Fider Server
-//Returns an exitcode, 0 for OK and 1 for ERROR
+// RunServer starts the Fider Server
+// Returns an exitcode, 0 for OK and 1 for ERROR
 func RunServer() int {
 	svcs := bus.Init()
 	ctx := log.WithProperty(context.Background(), log.PropertyKeyTag, "BOOTSTRAP")
