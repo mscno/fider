@@ -15,7 +15,7 @@ import (
 	"github.com/getfider/fider/app/pkg/worker"
 )
 
-//NotifyAboutNewPost sends a notification (web and email) to subscribers
+// NotifyAboutNewPost sends a notification (web and email) to subscribers
 func NotifyAboutNewPost(post *entity.Post) worker.Task {
 	return describe("Notify about new post", func(c *worker.Context) error {
 		// Web notification

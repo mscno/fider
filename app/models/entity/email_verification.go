@@ -7,7 +7,7 @@ import (
 	"github.com/getfider/fider/app/pkg/rand"
 )
 
-//EmailVerification is the model used by email verification process
+// EmailVerification is the model used by email verification process
 type EmailVerification struct {
 	Email      string
 	Name       string

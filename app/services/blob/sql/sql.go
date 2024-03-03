@@ -142,7 +142,7 @@ func storeBlob(ctx context.Context, c *cmd.StoreBlob) error {
 
 func deleteBlob(ctx context.Context, c *cmd.DeleteBlob) error {
 	blob.EnsureAuthorizedPrefix(ctx, c.Key)
-	
+
 	return using(ctx, func(tenantID sql.NullInt64) error {
 		trx, err := dbx.BeginTx(ctx)
 		if err != nil {

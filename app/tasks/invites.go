@@ -15,7 +15,7 @@ import (
 	"github.com/getfider/fider/app/pkg/worker"
 )
 
-//SendInvites sends one email to each invited recipient
+// SendInvites sends one email to each invited recipient
 func SendInvites(subject, message string, invitations []*actions.UserInvitation) worker.Task {
 	return describe("Send invites", func(c *worker.Context) error {
 		to := make([]dto.Recipient, len(invitations))

@@ -11,8 +11,8 @@ var HttpRequests = prometheus.NewCounterVec(
 )
 
 var HttpDuration = prometheus.NewHistogramVec(prometheus.HistogramOpts{
-	Name: "http_request_duration_seconds",
-	Help: "Duration of HTTP requests.",
+	Name:    "http_request_duration_seconds",
+	Help:    "Duration of HTTP requests.",
 	Buckets: []float64{0.2, 0.5, 1, 2, 5},
 }, []string{"operation"})
 

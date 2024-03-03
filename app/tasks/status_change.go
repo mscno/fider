@@ -15,7 +15,7 @@ import (
 	"github.com/getfider/fider/app/pkg/worker"
 )
 
-//NotifyAboutStatusChange sends a notification (web and email) to subscribers
+// NotifyAboutStatusChange sends a notification (web and email) to subscribers
 func NotifyAboutStatusChange(post *entity.Post, prevStatus enum.PostStatus) worker.Task {
 	return describe("Notify about post status change", func(c *worker.Context) error {
 		//Don't notify if previous status is the same

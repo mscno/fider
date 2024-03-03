@@ -2,7 +2,7 @@ package entity
 
 import "time"
 
-//Comment represents an user comment on an post
+// Comment represents an user comment on an post
 type Comment struct {
 	ID          int        `json:"id"`
 	Content     string     `json:"content"`

@@ -1,6 +1,6 @@
 package enum
 
-//Role is the role of a user inside a tenant
+// Role is the role of a user inside a tenant
 type Role int
 
 const (

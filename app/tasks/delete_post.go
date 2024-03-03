@@ -15,7 +15,7 @@ import (
 	"github.com/getfider/fider/app/pkg/worker"
 )
 
-//NotifyAboutDeletedPost sends a notification (web and email) to subscribers of the post that has been deleted
+// NotifyAboutDeletedPost sends a notification (web and email) to subscribers of the post that has been deleted
 func NotifyAboutDeletedPost(post *entity.Post) worker.Task {
 	return describe("Notify about deleted post", func(c *worker.Context) error {
 

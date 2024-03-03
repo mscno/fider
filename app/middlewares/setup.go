@@ -14,7 +14,7 @@ import (
 	"github.com/getfider/fider/app/pkg/worker"
 )
 
-//WorkerSetup current context with some services
+// WorkerSetup current context with some services
 func WorkerSetup() worker.MiddlewareFunc {
 	return func(next worker.Job) worker.Job {
 		return func(c *worker.Context) (err error) {
@@ -84,7 +84,7 @@ func WorkerSetup() worker.MiddlewareFunc {
 	}
 }
 
-//WebSetup current context with some services
+// WebSetup current context with some services
 func WebSetup() web.MiddlewareFunc {
 	return func(next web.HandlerFunc) web.HandlerFunc {
 		return func(c *web.Context) error {

@@ -1,6 +1,6 @@
 package enum
 
-//AvatarType are the possible types of a user avatar
+// AvatarType are the possible types of a user avatar
 type AvatarType int
 
 var (

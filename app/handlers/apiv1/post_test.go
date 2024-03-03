@@ -124,11 +124,11 @@ func TestUpdatePostHandler_NonAuthorized(t *testing.T) {
 	RegisterT(t)
 
 	post := &entity.Post{
-		ID: 5,
-		Number: 5,
-		Title: "My First Post",
+		ID:          5,
+		Number:      5,
+		Title:       "My First Post",
 		Description: "Such an amazing description",
-		User: mock.JonSnow,
+		User:        mock.JonSnow,
 	}
 	bus.AddHandler(func(ctx context.Context, q *query.GetPostByNumber) error {
 		if q.Number == post.Number {
@@ -151,12 +151,12 @@ func TestUpdatePostHandler_IsOwner_AfterGracePeriod(t *testing.T) {
 	RegisterT(t)
 
 	post := &entity.Post{
-		ID: 5,
-		Number: 5,
-		Title: "My First Post",
+		ID:          5,
+		Number:      5,
+		Title:       "My First Post",
 		Description: "Such an amazing description",
-		User: mock.AryaStark,
-		CreatedAt: time.Now().UTC().Add(-2 * time.Hour),
+		User:        mock.AryaStark,
+		CreatedAt:   time.Now().UTC().Add(-2 * time.Hour),
 	}
 	bus.AddHandler(func(ctx context.Context, q *query.GetPostByNumber) error {
 		if q.Number == post.Number {
@@ -175,17 +175,16 @@ func TestUpdatePostHandler_IsOwner_AfterGracePeriod(t *testing.T) {
 	Expect(code).Equals(http.StatusForbidden)
 }
 
-
 func TestUpdatePostHandler_IsOwner_WithinGracePeriod(t *testing.T) {
 	RegisterT(t)
 
 	post := &entity.Post{
-		ID: 5,
-		Number: 5,
-		Title: "My First Post",
+		ID:          5,
+		Number:      5,
+		Title:       "My First Post",
 		Description: "Such an amazing description",
-		User: mock.AryaStark,
-		CreatedAt: time.Now().UTC(),
+		User:        mock.AryaStark,
+		CreatedAt:   time.Now().UTC(),
 	}
 	bus.AddHandler(func(ctx context.Context, q *query.GetPostByNumber) error {
 		if q.Number == post.Number {

@@ -1,6 +1,6 @@
 package enum
 
-//EmailVerificationKind specifies which kind of process is being verified by email
+// EmailVerificationKind specifies which kind of process is being verified by email
 type EmailVerificationKind int16
 
 const (

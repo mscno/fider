@@ -14,11 +14,11 @@ var (
 	ErrContentTypeNotAllowed = stdErrors.New("Only Content-Type application/json is allowed")
 )
 
-//DefaultBinder is the default HTTP binder
+// DefaultBinder is the default HTTP binder
 type DefaultBinder struct {
 }
 
-//NewDefaultBinder creates a new default binder
+// NewDefaultBinder creates a new default binder
 func NewDefaultBinder() *DefaultBinder {
 	return &DefaultBinder{}
 }
@@ -29,7 +29,7 @@ func methodHasBody(method string) bool {
 		method == http.MethodPut
 }
 
-//Bind request data to object i
+// Bind request data to object i
 func (b *DefaultBinder) Bind(target any, c *Context) error {
 	if methodHasBody(c.Request.Method) && c.Request.ContentLength > 0 {
 		contentType := strings.Split(c.Request.GetHeader("Content-Type"), ";")

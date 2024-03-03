@@ -1,6 +1,6 @@
 package enum
 
-//PostStatus is the status of a given post
+// PostStatus is the status of a given post
 type PostStatus int
 
 var (

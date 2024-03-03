@@ -26,7 +26,7 @@ type Result struct {
 	Errors     []ErrorItem
 }
 
-//AddFieldFailure add failure message to specific field
+// AddFieldFailure add failure message to specific field
 func (r *Result) AddFieldFailure(field string, messages ...string) {
 	if r.Errors == nil {
 		r.Errors = make([]ErrorItem, 0)

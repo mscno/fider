@@ -1,6 +1,6 @@
 package enum
 
-//UserStatus is the status of a user
+// UserStatus is the status of a user
 type UserStatus int
 
 var (

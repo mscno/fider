@@ -1,6 +1,6 @@
 package entity
 
-//Tag represents a simple tag
+// Tag represents a simple tag
 type Tag struct {
 	ID       int    `json:"id"`
 	Name     string `json:"name"`

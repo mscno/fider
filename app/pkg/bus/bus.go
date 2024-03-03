@@ -51,7 +51,7 @@ func Reset() {
 
 // Initializes the bus services that have been registered via bus.Register
 // Services that set via Init(...services) are always registered (regardless of Enabled() function)
-/// and have preference over services registered from bus.Register
+// / and have preference over services registered from bus.Register
 func Init(forcedServices ...Service) []Service {
 	initializedServices := make([]Service, 0)
 	for _, svc := range forcedServices {

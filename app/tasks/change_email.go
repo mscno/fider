@@ -9,7 +9,7 @@ import (
 	"github.com/getfider/fider/app/pkg/worker"
 )
 
-//SendChangeEmailConfirmation is used to send the change email confirmation email to requestor
+// SendChangeEmailConfirmation is used to send the change email confirmation email to requestor
 func SendChangeEmailConfirmation(action *actions.ChangeUserEmail) worker.Task {
 	return describe("Send change email confirmation", func(c *worker.Context) error {
 

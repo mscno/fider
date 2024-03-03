@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-//NotificationChannel represents the medium that the notification is sent
+// NotificationChannel represents the medium that the notification is sent
 type NotificationChannel int
 
 var (
@@ -14,7 +14,7 @@ var (
 	NotificationChannelEmail NotificationChannel = 2
 )
 
-//NotificationEvent represents all possible notification events
+// NotificationEvent represents all possible notification events
 type NotificationEvent struct {
 	UserSettingsKeyName           string
 	DefaultSettingValue           string

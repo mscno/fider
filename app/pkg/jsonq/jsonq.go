@@ -6,13 +6,13 @@ import (
 	"strings"
 )
 
-//Query is a JSON query interface
+// Query is a JSON query interface
 type Query struct {
 	json string
 	m    map[string]*json.RawMessage
 }
 
-//New creates a new Query object based on given input as a JSON
+// New creates a new Query object based on given input as a JSON
 func New(content string) *Query {
 	var m map[string]*json.RawMessage
 	if len(content) > 0 && content[:1] == "{" {
@@ -27,7 +27,7 @@ func New(content string) *Query {
 	}
 }
 
-//String returns a string value from the json object based on its selector
+// String returns a string value from the json object based on its selector
 func (q *Query) String(selector string) string {
 	selectors := strings.Split(selector, ",")
 
@@ -49,7 +49,7 @@ func (q *Query) String(selector string) string {
 	return ""
 }
 
-//Int32 returns a integer value from the json object based on its selector
+// Int32 returns a integer value from the json object based on its selector
 func (q *Query) Int32(selector string) int {
 	data := q.get(selector)
 	if data != nil {
@@ -63,12 +63,12 @@ func (q *Query) Int32(selector string) int {
 	return 0
 }
 
-//IsArray returns true if the json object is an array
+// IsArray returns true if the json object is an array
 func (q *Query) IsArray() bool {
 	return q.m == nil
 }
 
-//ArrayLength returns number of elements in the array
+// ArrayLength returns number of elements in the array
 func (q *Query) ArrayLength() int {
 	if q.IsArray() {
 		var arr []any
@@ -81,7 +81,7 @@ func (q *Query) ArrayLength() int {
 	return 0
 }
 
-//Contains returns true if the json object has the key
+// Contains returns true if the json object has the key
 func (q *Query) Contains(selector string) bool {
 	return q.get(selector) != nil
 }
