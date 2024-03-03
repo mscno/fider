@@ -1,8 +1,7 @@
 #####################
 ### Server Build Step
 #####################
-FROM --platform=${TARGETPLATFORM:-linux/amd64} golang:1.19-bullseye AS server-builder 
-
+FROM --platform=${TARGETPLATFORM:-linux/amd64} golang:1.22 AS server-builder
 
 RUN mkdir /server
 WORKDIR /server
@@ -18,7 +17,7 @@ RUN COMMITHASH=${COMMITHASH} GOOS=${TARGETOS} GOARCH=${TARGETARCH} make build-se
 #################
 ### UI Build Step
 #################
-FROM --platform=${TARGETPLATFORM:-linux/amd64} node:18-bullseye AS ui-builder 
+FROM --platform=${TARGETPLATFORM:-linux/amd64} node:18-bullseye AS ui-builder
 
 WORKDIR /ui
 
@@ -32,7 +31,7 @@ RUN make build-ui
 ################
 ### Runtime Step
 ################
-FROM --platform=${TARGETPLATFORM:-linux/amd64} debian:bullseye-slim
+FROM --platform=${TARGETPLATFORM:-linux/amd64} debian:12-slim
 
 RUN apt-get update
 RUN apt-get install -y ca-certificates
