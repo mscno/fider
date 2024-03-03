@@ -7,4 +7,4 @@ WHERE ideas.user_id = users.id;
 
 UPDATE users
 SET tenant_id = (SELECT id FROM tenants LIMIT 1)
-WHERE tenant_id IS NULL
+WHERE tenant_id IS NULL;
